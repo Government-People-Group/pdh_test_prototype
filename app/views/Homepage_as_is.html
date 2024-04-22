@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} 
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "http://localhost:3000/Homepage_as_is",
+  navigation: [
+    {
+      href: "http://localhost:3000/Homepage_as_is",
+      text: "Home",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Sign in to your account"
+    },
+    {
+      href: "#3",
+      text: "Cymraeg"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Civil Service jobs search</h1>
+<p class="govuk-body">Find jobs in the Civil Service and central government organisations</p>
+
+<div class="govuk-grid-row" style="background-color: 		#f3f2f1">
+  <div class="govuk-grid-column-full"><br>
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="event-name">
+          What
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        Enter job title, skill or keywords
+      </div>
+      <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint">
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="event-name">
+          Where
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        Enter a postcode, town or region
+      </div>
+      <input class="govuk-input" id="event-name" name="eventName" type="text" aria-describedby="event-name-hint">
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <button type="submit" class="govuk-button" data-module="govuk-button" style="top: 85px">
+      Search
+    </button><br><br><br><br><br><p class="govuk-body">
+      <a href="#" class="govuk-link">Advanced search</a>
+    </p>
+  </div>
+</div>
+</div>
+
+
+
+<br>
+<p class="govuk-body">
+  <a href="https://www.civil-service-careers.gov.uk/" rel="external" target="_blank">Discover careers within the Civil Service</a>
+</p>
+
+{% endblock %}
+
+
