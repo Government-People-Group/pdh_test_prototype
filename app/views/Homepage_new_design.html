@@ -8,22 +8,26 @@
 {{ govukHeader({
   homepageUrl: "#",
   serviceName: "Civil Service Jobs",
-  serviceUrl: "http://localhost:3000/Homepage_to_be",
+  serviceUrl: "/Homepage_new_design",
   navigation: [
     {
-      href: "http://localhost:3000/Homepage_to_be",
+      href: "/Homepage_new_design",
       text: "Home",
       active: true
     },
     {
-      href: "#2",
+      href: "/sign_in_page",
       text: "Sign in to your account"
     },
     {
       href: "#3",
       text: "Cymraeg"
-    }
-  ]
+    },
+    {
+      href: "/index.html",
+      text: "Prototype main page",
+      active: true
+    }]
 }) }}
 {% endblock %}
 
@@ -75,7 +79,7 @@
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Search for jobs
   </button>
-  <a class="govuk-link" href="#">More search options</a>
+  <a class="govuk-link" href="/search-results-page.html">More search options</a>
 </div>
 <br>
 <p class="govuk-body">

@@ -2,24 +2,42 @@
 
 {% set pageName="Home" %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <span class="govuk-caption-xl">
+      <span class="govuk-visually-hidden">This section is: </span>Prototype
+  </span>
+  <h1 class="govuk-heading-xl">Civil Service Jobs improvements</h1>
+  <p class="govuk-body-s">Last updated 23 April 2024</p>
+  <hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1"><br>
 
-    <h1 class="govuk-heading-l">Candidate journey pages</h1>
+
+    <h1 class="govuk-heading-l">Candidate journey content changes</h1>
+    <p class="govuk-body-m">The following prototypes are to show the content changes which have been proposed for the candidate V9 pages.</p>
     <p><a href="/Homepage_as_is">Home page (as is)</a><br>
       <a href="/homepage_to_be">Home page (to be new content)</a></p><br>
+      <hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1"><br>
 
       <h1 class="govuk-heading-l">My new designs</h1>
+      <p class="govuk-body-m">The following prototypes are to show the my proposed designs for the new candidate pages.</p>
       <p><a href="/Homepage_new_design">Home page</a><br>
       <a href="/search-results-page">Search results page</a><br>
       <a href="/Job_advert">Job advert</a><br>
       <a href="/sign_in_page">Sign in page</a></p><br>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+  
   </div>
 </div>
 
