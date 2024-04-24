@@ -11,11 +11,11 @@
   serviceUrl: "/Homepage_new_design",
   navigation: [
   {
-    href: "/Homepage_new_design",
+    href: "/Homepage_to_be",
     text: "Home",
     active: true
   },
-    {
+      {
       href: "#3",
       text: "Cymraeg"
     },
@@ -39,40 +39,35 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Sign in to your account</h1><br>
+<h1 class="govuk-heading-l">Sign in</h1>
 <p class="govuk-body">If you do not have one, you need to <a href="" class="govuk-link govuk-link--no-visited-state">create an account</a>.</p>
-<p class="govuk-body">With an account you can set up job alerts and track progress of your application.</p><br>
-
+<p class="govuk-body">With an account you can set up job alerts and track progress of your application.</p>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds"><br>
     <div class="govuk-form-group">
-    <label class="govuk-label" for="one-half">
+    <label class="govuk-label" for="one-half" style="font-weight: bold;">
       Email address
     </label>
     <input class="govuk-input govuk" id="one-half" name="oneHalf" type="text">
   </div>
-  <div class="govuk-form-group govuk-password-input" data-module="govuk-password-input">
-    <label class="govuk-label" for="password-input">
-     Password
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="one-half" style="font-weight: bold;">
+      Password
     </label>
-    <div class="govuk-input__wrapper govuk-password-input__wrapper">
-      <input class="govuk-input govuk-password-input__input govuk-js-password-input-input" id="password-input" name="password" type="password" spellcheck="false" autocomplete="current-password" autocapitalize="none">
-      <button type="button" class="govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle" data-module="govuk-button" aria-controls="password-input" aria-label="Show password" hidden>
-        Show
-      </button>
-    </div>
+    <input class="govuk-input govuk" id="one-half" name="oneHalf" type="text">
   </div>
   </div>
 </div><br><br>
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Sign in
-  </button><br>
+  </button>
   <p class="govuk-body"><a href="" class="govuk-link govuk-link--no-visited-state">Forgotten your password?</a></p>
 <br>
 
 
 {% endblock %}
+
 
 
 
