@@ -4,7 +4,153 @@
   GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_new_design",
+  navigation: [
+  {
+    href: "/Homepage_new_design",
+    text: "Home",
+    active: true
+  },
+  {
+    href: "/sign_in_page",
+    text: "Sign in to your account"
+  },
+    {
+      href: "#3",
+      text: "Cymraeg"
+    },
+    {
+      href: "/index.html",
+      text: "Prototype main page",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
 
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-xl">Create your account</h1>
+
+<form method="post" action="/csjobs/search?notification=accountCreated">
+  <input type="hidden" name="account-status" id="account-status" value="SignedIn">
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userFirstName">
+First name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+</div>
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userLastName">
+Last name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="userLastName" name="userLastName" type="text">
+</div>
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userEmailAddress">
+Email address
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="userEmailAddress" name="userEmailAddress" type="text">
+</div>
+<div class="govuk-form-group">
+  <div class="govuk-form-group govuk-password-input" data-module="govuk-password-input">
+    <label class="govuk-label" for="password-input">
+      New password
+    </label>
+    <div class="govuk-input__wrapper govuk-password-input__wrapper">
+      <input class="govuk-input govuk-password-input__input govuk-js-password-input-input" style="width: 640px" id="password-input" name="password" type="password" spellcheck="false" autocomplete="current-password" autocapitalize="none">
+      <button type="button" class="govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle" data-module="govuk-button" aria-controls="password-input" aria-label="Show password" hidden>
+        Show
+      </button>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" aria-describedby="userCivilServant-hint">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend">
+Are you a civil servant or an employee of a public body?
+</legend>
+<div id="userCivilServant-hint" class="govuk-hint">
+This affects the jobs that we can show you.
+</div>
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="userCivilServant" name="userCivilServant" type="radio" value="Yes" aria-controls="conditional-userCivilServant" aria-expanded="false">
+    <label class="govuk-label govuk-radios__label" for="userCivilServant">
+  Yes
+</label>
+  </div>
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-userCivilServant">
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userDepartment">
+Select your department
+</label>
+<select class="govuk-select govuk-!-width-two-thirds" id="userDepartment" name="userDepartment">
+<option value=""></option>
+<option value="updated">Cabinet Office</option>
+<option value="published">HM Revenue and Customs</option>
+<option value="published">Home Office</option>
+</select>
+</div>
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userWorkEmail">
+Provide your departmental email address
+</label>
+<div id="userWorkEmail-hint" class="govuk-hint">
+Leave this section blank if you cannot access your email.
+</div>
+<input class="govuk-input govuk-!-width-two-thirds" id="userWorkEmail" name="userWorkEmail" type="text" aria-describedby="userWorkEmail-hint">
+</div>
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userLineManagerEmail">
+Provide your line manager’s email address
+</label>
+<div id="userLineManagerEmail-hint" class="govuk-hint">
+You only need to provide this if you cannot access your departmental email.
+</div>
+<input class="govuk-input govuk-!-width-two-thirds" id="userLineManagerEmail" name="userLineManagerEmail" type="text" aria-describedby="userLineManagerEmail-hint">
+</div>
+    </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="userCivilServant-2" name="userCivilServant" type="radio" value="No">
+    <label class="govuk-label govuk-radios__label" for="userCivilServant-2">
+  No
+</label>
+  </div>
+</div>
+</fieldset>
+</div>
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-visually-hidden">
+Agree terms and conditions
+</legend>
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="userTermsConditions" name="userTermsConditions" type="checkbox" value="I agree to terms and conditions">
+      <label class="govuk-label govuk-checkboxes__label" for="userTermsConditions">
+  I agree to <a href="https://www.civilservicejobs.service.gov.uk/csr/index.cgi?pageclass=StandardMessage&amp;display=tandc" target="_blank">terms and conditions (opens in new tab)</a>
+</label>
+    </div>
+</div>
+</fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+Create account
+</button>
+  </form>
 
 {% endblock %}

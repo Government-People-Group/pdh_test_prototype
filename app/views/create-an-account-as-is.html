@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_as_is",
+  navigation: [
+  {
+    href: "/Homepage_as_is",
+    text: "Home",
+    active: true
+  },
+  {
+    href: "/sign_in_page_as-is",
+    text: "Sign in to your account"
+  },
+    {
+      href: "#3",
+      text: "Cymraeg"
+    },
+    {
+      href: "/index.html",
+      text: "Prototype main page",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+<h1 class="govuk-heading-l">Create an account</h1>
+
+<form method="post" action="/csjobs/search?notification=accountCreated">
+  <input type="hidden" name="account-status" id="account-status" value="SignedIn">
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" for="userFirstName" style="font-weight: bold;">
+First name
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label" for="userFirstName" style="font-weight: bold;">
+  Last name
+  </label>
+  <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label" for="userFirstName" style="font-weight: bold;">
+    Email address
+    </label>
+    <div id="event-name-hint" class="govuk-hint">
+      You'll need this email address to sign in to your account
+    </div>
+    <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label" for="userFirstName">
+      Confirm your email address
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+      </div><br>
+      <h3 class="govuk-heading-m">Password</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label" for="userFirstName">
+     Create password
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          Your password should have at least 8 characters and not include your name or email address
+        </div>
+        <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="userFirstName">
+          Confirm password
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Are you a civil servant or an employee of a public body?
+                </h1>
+              </legend>
+              <div id="changedName-hint" class="govuk-hint">
+                Some public bodies are accredited by the Civil Service Commission allowing their employees to view vacancies advertised to civil servants
+              </div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" aria-controls="iscivilservant" aria-expanded="true">
+                  <label class="govuk-label govuk-radios__label" for="changedName">
+                    Yes
+                  </label>
+                  </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changedName-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+</form>
+<div class="govuk-radios__conditional" id="iscivilservant">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label" for="userDepartment" style="font-weight: bold;">
+              Select your department
+              </label>
+              <div id="changedName-hint" class="govuk-hint">
+                If your organisation isn't listed you can't register as a civil servant or an employee of a public body
+              </div>
+              <select class="govuk-select govuk-!-width-two-thirds" id="userDepartment" name="userDepartment">
+              <option value="">None selected</option>
+              <option value="updated">Cabinet Office</option>
+              <option value="published">HM Revenue and Customs</option>
+              <option value="published">Home Office</option>
+              </select>
+              </div>
+              <h3 class="govuk-heading-m">Work email address (optional)</h3>
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label" for="userFirstName">
+                Enter your work email address (optional)
+                </label>
+                <div id="changedName-hint" class="govuk-hint">
+                  If you can't access your work email leave this section blank. If left blank, we'll confirm your employment status with your line manager.
+                </div>
+                <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label" for="userFirstName">
+                 Confirm your work email address (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+                  </div>
+                  <h3 class="govuk-heading-m">Line manager's email address</h3>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label" for="userFirstName">
+                    Enter your line manager’s email address
+                    </label>
+                    <div id="changedName-hint" class="govuk-hint">
+                      We'll contact your line manager to verify you're a civil servant if you don't have access to your work email.
+                    </div>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label" for="userFirstName">
+                      Confirm your line manager's email address
+                      </label>
+                      <input class="govuk-input govuk-!-width-two-thirds" id="userFirstName" name="userFirstName" type="text">
+                      </div>
+</div>
+          
+          <p class="govuk-body">
+            <a href="https://csrtesting.wcn.co.uk/csr/index.cgi?pageclass=StandardMessage&display=tandc" class="govuk-link govuk-link--no-visited-state">Terms and conditions (opens in a new tab)</a>
+          </p>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              I agree to terms and conditions 
+            </label>
+            </div>
+</form><br>
+
+<button class="govuk-button" data-module="govuk-button">
+Create account
+</button>
+  </form>
+
+{% endblock %}
