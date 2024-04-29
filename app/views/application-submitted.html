@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_new_design",
+  navigation: [
+  {
+    href: "#1",
+    text: "My dashboard",
+    active: true
+  },
+  {
+    href: "#2",
+    text: "Sign out"
+  },
+  {
+    href: "/index.html",
+    text: "Prototype main page",
+    active: true
+  }
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+<h1 class="govuk-panel__title">
+  Application submitted
+</h1>
+<div class="govuk-panel__body">
+  Your application reference number<br><strong>12345</strong>
+</div>
+
+</div>
+
+<p>
+  Your application has been submitted for the position of Senior interaction designer.
+</p>
+    <p>
+      We have sent you a confirmation email.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      What happens next
+    </h2>
+
+    <p>
+      Your application is currently being reviewed and you can keep up to date on your progress of your application via <a href="#">
+        My dashboard</a>. 
+    </p>
+    <p>
+      <a href="#">
+        What did you think of this service?
+      </a> (takes 5 minutes)
+    </p>
+
+
+  </div>
+</div>
+
+{% endblock %}
