@@ -1,0 +1,387 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  My dashboard
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_new_design",
+  navigation: [
+  {
+    href: "/my-dashboard",
+    text: "My dashboard",
+    active: true
+  },
+  {
+    href: "#2",
+    text: "Sign out"
+  },
+  {
+    href: "#2",
+    text: "My details"
+  },
+  {
+    href: "/index.html",
+    text: "Prototype main page",
+    active: true
+  }
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="app-step-nav-header">
+  <h2 class="govuk-heading-l govuk-!-margin-bottom-0">My dashboard</h2>
+</div><br>
+<p style="float: right;"><a href="/search-results-page">Search for more jobs</a><br></p>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="govuk-body">Use this page to:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+				<li>track the progress of your submitted applications</li>
+        <li>continue with any not submitted applications</li>
+        <li>see your saved jobs</li>
+        <li>see your saved job alerts</li>
+				<li>see your previous applications that are now closed</li>
+			</ul>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper";>
+        <h2 class="govuk-summary-card__title">
+          Applications submitted
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Vacancy ID</th>
+                <th scope="col" class="govuk-table__header">Job title</th>
+                <th scope="col" class="govuk-table__header">Department</th>
+                <th scope="col" class="govuk-table__header">Application ID</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">12345</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Sifting in progress</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">12345</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Pre employment checks</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">12345</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Scheduled for interview</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">12345</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Invited to interview</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">12345</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Invited to interview</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <nav class="govuk-pagination govuk-!-padding-top-1" style="float:left" role="navigation" aria-label="results">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg></a>
+            </div>
+          </nav>
+        </dl>
+        <p class="govuk-body-m"><a href="" class="govuk-link govuk-link--no-visited-state">See previous applications</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-full">
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Applications not submitted
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Vacancy ID</th>
+                <th scope="col" class="govuk-table__header">Job title</th>
+                <th scope="col" class="govuk-table__header">Department</th>
+                <th scope="col" class="govuk-table__header">Closing date</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+                <td class="govuk-table__cell"><a href="/new-application-form" class="govuk-link govuk-link--no-visited-state">Continue</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+                <td class="govuk-table__cell"><a href="/new-application-form" class="govuk-link govuk-link--no-visited-state">Continue</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+                <td class="govuk-table__cell"><a href="/new-application-form" class="govuk-link govuk-link--no-visited-state">Continue</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+                <td class="govuk-table__cell"><a href="/new-application-form" class="govuk-link govuk-link--no-visited-state">Continue</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">Cabinet Office</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+                <td class="govuk-table__cell"><a href="/new-application-form" class="govuk-link govuk-link--no-visited-state">Continue</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <nav class="govuk-pagination govuk-!-padding-top-1" style="float:left" role="navigation" aria-label="results">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg></a>
+            </div>
+          </nav>
+        </dl>
+      </div>
+    </div>
+    
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Saved jobs
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Vacancy reference</th>
+                <th scope="col" class="govuk-table__header">Job title</th>
+                <th scope="col" class="govuk-table__header">Closing date</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+            </tbody>
+          </table>
+          <nav class="govuk-pagination govuk-!-padding-top-1" style="float:left" role="navigation" aria-label="results">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg></a>
+            </div>
+          </nav>
+        </dl>
+        <p class="govuk-body-m"><a href="portal-gds-manage-saved-jobs" class="govuk-link govuk-link--no-visited-state">Manage your saved jobs</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Job alerts
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Vacancy reference</th>
+                <th scope="col" class="govuk-table__header">Job title</th>
+                <th scope="col" class="govuk-table__header">Closing date</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">1234567</td>
+                <td class="govuk-table__cell">Senior interaction designer</td>
+                <td class="govuk-table__cell">28 May 2024</td>
+              </tr>
+            </tbody>
+          </table>
+          <nav class="govuk-pagination govuk-!-padding-top-1" style="float:left" role="navigation" aria-label="results">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg></a>
+            </div>
+          </nav>
+        </dl>
+        <p class="govuk-body-m"><a href="" class="govuk-link govuk-link--no-visited-state">Manage your job alerts</a></p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+          
+
+  
+
+{% endblock %}
+
