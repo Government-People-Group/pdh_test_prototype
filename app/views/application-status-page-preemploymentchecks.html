@@ -1,0 +1,211 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  My dashboard
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_new_design",
+  navigation: [
+  {
+    href: "/my-dashboard",
+    text: "My dashboard",
+    active: true
+  },
+  {
+    href: "#2",
+    text: "Sign out"
+  },
+  {
+    href: "#2",
+    text: "My details"
+  },
+  {
+    href: "/index.html",
+    text: "Prototype main page",
+    active: true
+  }
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<a href="/my-dashboard" class="govuk-back-link">Back to my dashboard</a>
+
+<div class="app-step-nav-header">
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Application for <br> Senior Interaction Designer</h1>
+</div><br>
+<p class="govuk-body" style="float: left;">Vacancy reference: 1234567</p>
+  <p class="govuk-body" style="float: right;">Application reference: 12345</p>
+  <br>
+<br>
+<br>
+<hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1"><br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Pre employment checks underway</h2><br>
+
+    <p class="govuk-body">We are working through the checks we need to do. Below is a list showing the status of each check:</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col"> Description</th>
+          <th class="govuk-table__header" scope="col"> Status </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            your identity and right to work in the uk
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            your time spent living abroad
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            your employment history, including any gaps
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            your references, to confirm your employment history
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            whether you have any convictions
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            that the required level of security clearance has been obtained
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            whether you have previously been dismissed from employment in the Civil Service
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            whether you have previously been dismissed from a government job due to fraud
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            whether, when self-employed, your business was conducted and terminated satisfactorily
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            whether you have ever been declared bankrupt
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            which Civil Service pension arrangements we can offer you
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            what workplace adjustments we could make to help you take up employment with us, and carry out the duties of the job effectively
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">
+              In progress
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      
+    <p class="govuk-body">We will notify you by email when all check are complete.</p>
+
+    <p class="govuk-body">If you are no longer interested in the job, you can <a href="">withdraw your application</a>.</p>
+
+
+  </div>
+</div>
+<br>
+
+  <p><a class="govuk-link" href="/Job_advert">View job advert</a></p>
+
+
+
+  
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  My dashboard
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_new_design",
+  navigation: [
+  {
+    href: "/my-dashboard",
+    text: "My dashboard",
+    active: true
+  },
+  {
+    href: "#2",
+    text: "Sign out"
+  },
+  {
+    href: "#2",
+    text: "My details"
+  },
+  {
+    href: "/index.html",
+    text: "Prototype main page",
+    active: true
+  }
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<a href="/my-dashboard" class="govuk-back-link">Back to my dashboard</a>
+
+<div class="app-step-nav-header">
+  <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Application for <br> Senior Interaction Designer</h1>
+</div><br>
+<p class="govuk-body" style="float: left;">Vacancy reference: 1234567</p>
+  <p class="govuk-body" style="float: right;">Application reference: 12345</p>
+  <br>
+<br>
+<br>
+<hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1"><br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">You have received a provisional offer</h2><br>
+
+    <p class="govuk-body">Congratulations. Your application was successful and we’d like to make you a provisional job offer.</p>
+      
+    <p class="govuk-body">Before we can make a formal job offer, you must accept the provisional offer. <br> We need to do some pre-employment checks. You must provide more information to us in the following screens.</p>
+
+    <p class="govuk-body">If you are no longer interested in the job, you can <a href="">withdraw your application</a>.</p>
+
+
+  </div>
+</div>
+<br>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Accept provisional offer
+  </button>
+  <a class="govuk-link" href="/Job_advert">View job advert</a>
+</div>
+
+
+
+  
+
+{% endblock %}
+
