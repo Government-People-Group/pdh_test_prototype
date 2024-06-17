@@ -1,0 +1,260 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Civil Service Jobs",
+  serviceUrl: "/Homepage_as_is",
+  navigation: [
+{
+  href: "/Homepage_as_is",
+  text: "Home",
+  active: true
+},
+{
+  href: "/sign_in_page_as-is",
+  text: "Sign in to your account"
+},
+  {
+    href: "#3",
+    text: "Cymraeg"
+  },
+  {
+    href: "/index.html",
+    text: "Prototype main page",
+    active: true
+  }
+]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a prototype and is not a real service.'
+  }) }}
+
+  <p class="govuk-!-text-align-right govuk-!-margin-top-5">        
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="/csjobs/search?notification=">Home</a>
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="#">Applications</a>
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="#">View application</a>
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="#">Job Description</a>
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="#">Booked Interviews</a>
+    <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-left-3" href="/csjobs/sign-in?notification=&amp;applyCreateAccount=&amp;linkStatus=">Sign out</a>
+    <hr class="govuk-!-margin-top-1 govuk-!-margin-bottom-1"><br><br>
+
+</p>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+        Your details
+      </a>
+    </div>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-status">
+        Right to work
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-hint company-details-3-status">
+        Employment History
+      </a>
+    </div>
+  </li>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-4-status">
+        Verifying your history
+      </a>
+    </div>
+  </li>
+  <section style="background-color: #ffdd00;">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-4-status">
+        Misconduct check
+      </a>
+    </div>
+  </li>
+</section>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Pension Questionnaire
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Overseas
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Bankruptcy Details
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Health Declaration
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Self Employment
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Previous Civil Service Employment
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Upload identity documents
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        DBS - Personal Information
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        DBS - Address Details
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Digital identity check
+      </a>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        Declaration
+      </a>
+    </div>
+  </li>
+</ul>
+</div>
+<div class="govuk-grid-column-two-thirds" style="border-left-style:solid; color: grey; border-width: 1px;">
+
+  <h1 class="govuk-heading-l">Misconduct check</h1>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend">
+        During any of your previous employment within the last 5 years have you ever had a claim against you of misconduct substantiated, including fraud?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="event-name">
+      Please provide full details, including the name and address of the employer. Also, please confirm that you are content for us to contact them for further information if required:
+    </label>
+    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend">
+        During any of your previous employment within the last 5 years have you ever left employment while under investigation for misconduct or prior to an investigation being launched?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="event-name">
+      Please provide full details, including the name and address of the employer. Also, please confirm that you are content for us to contact them for further information if required:
+    </label>
+    <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend">
+        Have you ever worked, in any capacity, for a UK Police Force?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            No
+          </label>
+        </div>
+  
+      </div>
+    </fieldset>
+  </div>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+</div>
+</div>
+{% endblock %}
